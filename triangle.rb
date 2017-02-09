@@ -15,6 +15,8 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  raise TriangleError.new unless a > 0 and b > 0 and c > 0
+  raise TriangleError.new unless [a,b,c].sort[0,2].sum > [a,b,c].max
   return :equilateral if a == b and b == c
   return :isosceles if a == b or b == c or c == a
   return :scalene
